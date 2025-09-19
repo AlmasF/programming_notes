@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>TypeScript - Конспект</title>
+  </head>
+  <body
+    class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50"
+  >
+    <!-- Header Section -->
+    <header
+      class="bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-10"
+    >
+      <div class="max-w-4xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <a
+            href="/index.html"
+            class="flex items-center text-blue-600 hover:text-blue-800 transition-colors group"
+          >
+            <svg
+              class="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              ></path>
+            </svg>
+            На главную
+          </a>
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-sm"
+            >
+              TS
+            </div>
+            <span class="text-sm text-gray-500 hidden md:block"
+              >TypeScript Конспект</span
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-6 py-12">
+      <!-- Title Section -->
+      <section class="text-center mb-12">
+        <div
+          class="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-200"
+        >
+          <h1
+            class="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"
+          >
+            TypeScript
+          </h1>
+          <p class="text-lg text-gray-600 mb-6">
+            Фундаментальный курс по статической типизации для JavaScript
+          </p>
+
+          <!-- Source Info -->
+          <div class="bg-blue-50 rounded-xl p-6 border border-blue-200">
+            <h2
+              class="text-lg font-semibold text-blue-800 mb-4 flex items-center"
+            >
+              <svg
+                class="w-5 h-5 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                ></path>
+              </svg>
+              Источник материала
+            </h2>
+            <div class="space-y-3">
+              <div class="flex items-start space-x-3">
+                <span class="text-sm font-medium text-blue-700 min-w-0"
+                  >Курс:</span
+                >
+                <a
+                  href="https://www.youtube.com/watch?v=LWtHl__oEWc&list=WL&index=22&t=5424s"
+                  class="text-sm text-blue-600 hover:text-blue-800 underline leading-relaxed"
+                >
+                  TypeScript ФУНДАМЕНТАЛЬНЫЙ КУРС от А до Я. Вся теория +
+                  практика
+                </a>
+              </div>
+              <div class="flex items-center space-x-3">
+                <span class="text-sm font-medium text-blue-700">Автор:</span>
+                <a
+                  href="https://www.youtube.com/@UlbiTV"
+                  class="text-sm text-blue-600 hover:text-blue-800 underline"
+                >
+                  Ulbi TV
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Concepts Section -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-semibold mb-8 text-gray-800 flex items-center">
+          <span
+            class="w-1 h-6 bg-gradient-to-b from-blue-500 to-indigo-500 rounded-full mr-3"
+          ></span>
+          Ключевые концепции TypeScript
+        </h2>
+
+        <div class="grid gap-6">
+          <!-- Concept 1 -->
+          <article
+            class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
+          >
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl flex-shrink-0"
+              >
+                📝
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                  Статическая типизация
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                  <strong>TypeScript</strong> — это язык программирования со
+                  статической типизацией (явной или выводимой + структурной).
+                  Позволяет ловить ошибки на этапе компиляции, а не во время
+                  выполнения.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Concept 2 -->
+          <article
+            class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
+          >
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-xl flex-shrink-0"
+              >
+                🧩
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                  Мышление множествами
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                  Относись к типам, как ко <strong>множествам</strong>. Многие
+                  концепции станут понятнее — пересечения, объединения, подтипы
+                  — всё это операции над множествами значений.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Concept 3 -->
+          <article
+            class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
+          >
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center text-white font-bold text-xl flex-shrink-0"
+              >
+                ⚠️
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                  Избегайте опасных конструкций
+                </h3>
+                <div class="text-gray-600 leading-relaxed">
+                  <p class="mb-3">
+                    Старайся не использовать в production коде следующие
+                    конструкции:
+                  </p>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div class="bg-red-50 p-3 rounded-lg border border-red-200">
+                      <code class="text-red-700 font-semibold">any</code>
+                      <span class="text-sm text-red-600 block"
+                        >Отключает проверку типов</span
+                      >
+                    </div>
+                    <div class="bg-red-50 p-3 rounded-lg border border-red-200">
+                      <code class="text-red-700 font-semibold">@ts-ignore</code>
+                      <span class="text-sm text-red-600 block"
+                        >Игнорирует ошибки</span
+                      >
+                    </div>
+                    <div class="bg-red-50 p-3 rounded-lg border border-red-200">
+                      <code class="text-red-700 font-semibold">as Type</code>
+                      <span class="text-sm text-red-600 block"
+                        >Принудительное приведение</span
+                      >
+                    </div>
+                    <div class="bg-red-50 p-3 rounded-lg border border-red-200">
+                      <code class="text-red-700 font-semibold">value!</code>
+                      <span class="text-sm text-red-600 block"
+                        >Non-null assertion</span
+                      >
+                    </div>
+                  </div>
+                  <p class="mt-3 text-sm">
+                    <strong>Будь аккуратен</strong>, иначе ошибки неизбежны!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Concept 4 -->
+          <article
+            class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
+          >
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center text-white font-bold text-xl flex-shrink-0"
+              >
+                🎯
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                  Фокус на основах
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                  Сделай акцент на <strong>базе</strong> — типы, интерфейсы,
+                  дженерики, utility types. Остальное легко освоишь позже, по
+                  мере необходимости. Крепкий фундамент — залог успеха!
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Infer Section -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-semibold mb-8 text-gray-800 flex items-center">
+          <span
+            class="w-1 h-6 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full mr-3"
+          ></span>
+          Ключевое слово infer
+        </h2>
+
+        <div
+          class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200"
+        >
+          <div class="flex items-start space-x-4 mb-6">
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-white font-bold text-xl flex-shrink-0"
+            >
+              🔍
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-gray-800 mb-3">
+                Что такое infer?
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-4">
+                <code
+                  class="bg-purple-100 text-purple-800 px-2 py-1 rounded font-semibold"
+                  >infer</code
+                >
+                позволяет <strong>извлекать (выводить) типы</strong> из других
+                типов в условных типах. Это как "переменная для типа", которую
+                можно использовать только в ветке
+                <code class="bg-gray-100 px-1 rounded">true</code> условного
+                типа.
+              </p>
+            </div>
+          </div>
+
+          <!-- Basic Syntax -->
+          <div class="mb-8">
+            <h4
+              class="text-lg font-semibold text-gray-800 mb-4 flex items-center"
+            >
+              <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+              Базовый синтаксис
+            </h4>
+            <div
+              class="bg-gray-800 text-green-400 p-4 rounded-lg font-mono text-sm mb-4"
+            >
+              <div class="text-gray-300">// Общая схема</div>
+              <div>
+                <span class="text-blue-300">type</span>
+                <span class="text-yellow-300">MyType</span>&lt;<span
+                  class="text-red-300"
+                  >T</span
+                >&gt; = <span class="text-red-300">T</span>
+                <span class="text-blue-300">extends</span>
+                <span class="text-yellow-300">SomePattern</span>&lt;<span
+                  class="text-purple-300"
+                  >infer U</span
+                >&gt; ? <span class="text-purple-300">U</span> :
+                <span class="text-gray-300">never</span>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600">
+              <code class="bg-purple-100 text-purple-800 px-1 rounded"
+                >infer U</code
+              >
+              создает "переменную типа" U, которую можно использовать в ветке
+              true
+            </p>
+          </div>
+
+          <!-- Examples -->
+          <div class="space-y-6">
+            <!-- Example 1 -->
+            <div
+              class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-200"
+            >
+              <h5 class="font-semibold text-blue-800 mb-3 flex items-center">
+                <span class="text-lg mr-2">📦</span>
+                Извлечение типа из массива
+              </h5>
+              <div
+                class="bg-gray-800 text-green-400 p-4 rounded-lg font-mono text-sm mb-3"
+              >
+                <div class="text-gray-300">
+                  // Получаем тип элемента массива
+                </div>
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">GetArrayType</span>&lt;<span
+                    class="text-red-300"
+                    >T</span
+                  >&gt; = <span class="text-red-300">T</span>
+                  <span class="text-blue-300">extends</span> (<span
+                    class="text-purple-300"
+                    >infer U</span
+                  >)[] ? <span class="text-purple-300">U</span> :
+                  <span class="text-gray-300">never</span>
+                </div>
+                <br />
+                <div class="text-gray-300">// Примеры использования:</div>
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">StringType</span> =
+                  <span class="text-yellow-300">GetArrayType</span>&lt;<span
+                    class="text-green-300"
+                    >string</span
+                  >[]&gt; <span class="text-gray-300">// string</span>
+                </div>
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">NumberType</span> =
+                  <span class="text-yellow-300">GetArrayType</span>&lt;<span
+                    class="text-green-300"
+                    >number</span
+                  >[]&gt; <span class="text-gray-300">// number</span>
+                </div>
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">NeverType</span> =
+                  <span class="text-yellow-300">GetArrayType</span>&lt;<span
+                    class="text-green-300"
+                    >string</span
+                  >&gt; <span class="text-gray-300">// never</span>
+                </div>
+              </div>
+              <p class="text-sm text-blue-700">
+                ✅ <code class="bg-blue-100 px-1 rounded">infer U</code> "ловит"
+                тип элемента, если T является массивом
+              </p>
+            </div>
+
+            <!-- Example 2 -->
+            <div
+              class="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-xl border border-green-200"
+            >
+              <h5 class="font-semibold text-green-800 mb-3 flex items-center">
+                <span class="text-lg mr-2">🔧</span>
+                Извлечение типов из функций
+              </h5>
+              <div
+                class="bg-gray-800 text-green-400 p-4 rounded-lg font-mono text-sm mb-3"
+              >
+                <div class="text-gray-300">
+                  // Получаем тип параметров функции
+                </div>
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">GetParameters</span>&lt;<span
+                    class="text-red-300"
+                    >T</span
+                  >&gt; = <span class="text-red-300">T</span>
+                  <span class="text-blue-300">extends</span> (...args:
+                  <span class="text-purple-300">infer P</span>) =&gt;
+                  <span class="text-green-300">any</span> ?
+                  <span class="text-purple-300">P</span> :
+                  <span class="text-gray-300">never</span>
+                </div>
+                <br />
+                <div class="text-gray-300">
+                  // Получаем тип возвращаемого значения
+                </div>
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">GetReturnType</span>&lt;<span
+                    class="text-red-300"
+                    >T</span
+                  >&gt; = <span class="text-red-300">T</span>
+                  <span class="text-blue-3000">extends</span> (...args:
+                  <span class="text-green-300">any</span>[]) =&gt;
+                  <span class="text-purple-300">infer R</span> ?
+                  <span class="text-purple-300">R</span> :
+                  <span class="text-gray-300">never</span>
+                </div>
+                <br />
+                <div class="text-gray-300">// Примеры:</div>
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">Fn</span> = (a:
+                  <span class="text-green-300">string</span>, b:
+                  <span class="text-green-300">number</span>) =&gt;
+                  <span class="text-green-300">boolean</span>
+                </div>
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">Params</span> =
+                  <span class="text-yellow-300">GetParameters</span>&lt;<span
+                    class="text-yellow-300"
+                    >Fn</span
+                  >&gt; <span class="text-gray-300">// [string, number]</span>
+                </div>
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">Return</span> =
+                  <span class="text-yellow-300">GetReturnType</span>&lt;<span
+                    class="text-yellow-300"
+                    >Fn</span
+                  >&gt; <span class="text-gray-300">// boolean</span>
+                </div>
+              </div>
+              <p class="text-sm text-green-700">
+                ✅ <code class="bg-green-100 px-1 rounded">infer</code> может
+                извлекать несколько типов из одного паттерна
+              </p>
+            </div>
+
+            <!-- Example 3 -->
+            <div
+              class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-xl border border-orange-200"
+            >
+              <h5 class="font-semibold text-orange-800 mb-3 flex items-center">
+                <span class="text-lg mr-2">🎁</span>
+                Извлечение из Promise
+              </h5>
+              <div
+                class="bg-gray-800 text-green-400 p-4 rounded-lg font-mono text-sm mb-3"
+              >
+                <div class="text-gray-300">// Разворачиваем Promise</div>
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">Awaited</span>&lt;<span
+                    class="text-red-300"
+                    >T</span
+                  >&gt; = <span class="text-red-300">T</span>
+                  <span class="text-blue-300">extends</span>
+                  <span class="text-yellow-300">Promise</span>&lt;<span
+                    class="text-purple-300"
+                    >infer U</span
+                  >&gt; ? <span class="text-purple-300">U</span> :
+                  <span class="text-red-300">T</span>
+                </div>
+                <br />
+                <div class="text-gray-300">// Примеры:</div>
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">PromiseString</span> =
+                  <span class="text-yellow-300">Promise</span>&lt;<span
+                    class="text-green-300"
+                    >string</span
+                  >&gt;
+                </div>
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">StringType</span> =
+                  <span class="text-yellow-300">Awaited</span>&lt;<span
+                    class="text-yellow-300"
+                    >PromiseString</span
+                  >&gt; <span class="text-gray-300">// string</span>
+                </div>
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">NumberType</span> =
+                  <span class="text-yellow-300">Awaited</span>&lt;<span
+                    class="text-green-300"
+                    >number</span
+                  >&gt;
+                  <span class="text-gray-300">// number (не Promise)</span>
+                </div>
+              </div>
+              <p class="text-sm text-orange-700">
+                ✅ Если тип не подходит под паттерн, возвращается исходный тип
+              </p>
+            </div>
+          </div>
+
+          <!-- Important Notes -->
+          <div
+            class="bg-yellow-50 border border-yellow-200 rounded-xl p-6 mt-6"
+          >
+            <h4
+              class="text-lg font-semibold text-yellow-800 mb-4 flex items-center"
+            >
+              <span class="text-xl mr-2">⚡</span>
+              Важные особенности infer
+            </h4>
+            <ul class="space-y-3 text-yellow-800">
+              <li class="flex items-start">
+                <span
+                  class="w-2 h-2 bg-yellow-500 rounded-full mt-2 mr-3 flex-shrink-0"
+                ></span>
+                <div>
+                  <strong>Работает только в условных типах</strong> - нельзя
+                  использовать вне конструкции
+                  <code class="bg-yellow-100 px-1 rounded"
+                    >T extends ... ? ... : ...</code
+                  >
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span
+                  class="w-2 h-2 bg-yellow-500 rounded-full mt-2 mr-3 flex-shrink-0"
+                ></span>
+                <div>
+                  <strong>Доступен только в ветке true</strong> -
+                  <code class="bg-yellow-100 px-1 rounded">infer U</code> можно
+                  использовать только после
+                  <code class="bg-yellow-100 px-1 rounded">?</code>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span
+                  class="w-2 h-2 bg-yellow-500 rounded-full mt-2 mr-3 flex-shrink-0"
+                ></span>
+                <div>
+                  <strong>Может быть несколько infer</strong> - в одном паттерне
+                  можно извлекать разные типы
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span
+                  class="w-2 h-2 bg-yellow-500 rounded-full mt-2 mr-3 flex-shrink-0"
+                ></span>
+                <div>
+                  <strong>TypeScript сам выводит тип</strong> - не нужно явно
+                  указывать, какой тип извлекается
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Progress Section -->
+      <section
+        class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-200"
+      >
+        <h3 class="text-lg font-semibold text-blue-800 mb-4 flex items-center">
+          <span class="mr-2">📈</span>
+          Прогресс изучения
+        </h3>
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-blue-700">Основы TypeScript</span>
+            <span class="text-sm text-blue-600 font-semibold">✅ Изучено</span>
+          </div>
+          <div class="w-full bg-blue-200 rounded-full h-2">
+            <div
+              class="bg-gradient-to-r from-blue-500 to-blue-600 h-2 rounded-full w-1/4"
+            ></div>
+          </div>
+          <p class="text-sm text-blue-600 mt-2">
+            Продолжайте изучение! Следующие темы: интерфейсы, дженерики, utility
+            types.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white/80 backdrop-blur-sm border-t border-gray-200 mt-20">
+      <div class="max-w-4xl mx-auto px-6 py-8">
+        <div class="text-center">
+          <p class="text-gray-600 mb-4">
+            💡 TypeScript делает JavaScript лучше — типы как документация и
+            защита от ошибок!
+          </p>
+          <div class="flex justify-center space-x-6 text-sm text-gray-500">
+            <span>🔧 Статическая типизация</span>
+            <span>•</span>
+            <span>🛡️ Безопасность типов</span>
+            <span>•</span>
+            <span>⚡ Лучший DX</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

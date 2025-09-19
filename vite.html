@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Vite - Конспект</title>
+  </head>
+  <body class="p-10 bg-gray-50">
+    <header class="mb-8">
+      <a href="/index.html" class="text-blue-600 hover:text-blue-800 underline">
+        ← На главную
+      </a>
+    </header>
+
+    <h1 class="text-4xl font-bold mb-6 text-gray-800">
+      Vite - Современный инструмент сборки
+    </h1>
+
+    <div class="prose max-w-none">
+      <h2 class="text-2xl font-semibold mb-4 text-gray-700">Что такое Vite?</h2>
+      <div class="bg-blue-50 p-4 rounded-lg mb-6">
+        <p class="mb-2">
+          <strong>Vite</strong> (произносится как "вит", от французского
+          "быстрый") — это инструмент сборки, который значительно улучшает опыт
+          фронтенд-разработки.
+        </p>
+        <p><strong>Создатель:</strong> Эван Ю (создатель Vue.js)</p>
+      </div>
+
+      <h2 class="text-2xl font-semibold mb-4 text-gray-700">
+        Ключевые особенности
+      </h2>
+      <ul class="list-disc pl-6 mb-6 space-y-2">
+        <li>
+          <strong>Мгновенный старт сервера</strong> - холодный запуск за
+          миллисекунды
+        </li>
+        <li>
+          <strong>Молниеносная горячая перезагрузка (HMR)</strong> - изменения
+          видны мгновенно
+        </li>
+        <li><strong>Встроенная поддержка TypeScript, JSX, CSS</strong></li>
+        <li><strong>Оптимизированная сборка</strong> на основе Rollup</li>
+        <li>
+          <strong>Поддержка множества фреймворков</strong> (Vue, React, Svelte,
+          Vanilla JS)
+        </li>
+      </ul>
+
+      <h2 class="text-2xl font-semibold mb-4 text-gray-700">
+        Установка и создание проекта
+      </h2>
+      <div class="bg-gray-800 text-green-400 p-4 rounded-lg mb-6 font-mono">
+        <div class="mb-2"># Создание нового проекта</div>
+        <div class="mb-2">npm create vite@latest my-project</div>
+        <div class="mb-2">cd my-project</div>
+        <div class="mb-2">npm install</div>
+        <div>npm run dev</div>
+      </div>
+
+      <h2 class="text-2xl font-semibold mb-4 text-gray-700">
+        Шаблоны проектов
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div class="bg-white p-4 rounded-lg border">
+          <h3 class="font-semibold mb-2">Vanilla JavaScript</h3>
+          <code class="text-sm bg-gray-100 p-1 rounded"
+            >npm create vite@latest -- --template vanilla</code
+          >
+        </div>
+        <div class="bg-white p-4 rounded-lg border">
+          <h3 class="font-semibold mb-2">React</h3>
+          <code class="text-sm bg-gray-100 p-1 rounded"
+            >npm create vite@latest -- --template react</code
+          >
+        </div>
+        <div class="bg-white p-4 rounded-lg border">
+          <h3 class="font-semibold mb-2">Vue</h3>
+          <code class="text-sm bg-gray-100 p-1 rounded"
+            >npm create vite@latest -- --template vue</code
+          >
+        </div>
+        <div class="bg-white p-4 rounded-lg border">
+          <h3 class="font-semibold mb-2">TypeScript</h3>
+          <code class="text-sm bg-gray-100 p-1 rounded"
+            >npm create vite@latest -- --template vanilla-ts</code
+          >
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-semibold mb-4 text-gray-700">
+        Структура проекта Vite
+      </h2>
+      <div
+        class="bg-gray-800 text-green-400 p-4 rounded-lg mb-6 font-mono text-sm"
+      >
+        <div>my-vite-project/</div>
+        <div>├── index.html # Входная точка</div>
+        <div>├── package.json</div>
+        <div>├── vite.config.js # Конфигурация Vite</div>
+        <div>├── src/</div>
+        <div>│ ├── main.js # Основной JS файл</div>
+        <div>│ ├── style.css</div>
+        <div>│ └── ...</div>
+        <div>└── public/ # Статические файлы</div>
+        <div>└── favicon.ico</div>
+      </div>
+
+      <h2 class="text-2xl font-semibold mb-4 text-gray-700">
+        Основные команды
+      </h2>
+      <div class="space-y-4 mb-6">
+        <div class="bg-white p-4 rounded-lg border">
+          <h3 class="font-semibold mb-2">Разработка</h3>
+          <code class="bg-gray-100 p-2 rounded block">npm run dev</code>
+          <p class="text-sm text-gray-600 mt-2">
+            Запускает dev-сервер (обычно на http://localhost:5173)
+          </p>
+        </div>
+        <div class="bg-white p-4 rounded-lg border">
+          <h3 class="font-semibold mb-2">Сборка для продакшена</h3>
+          <code class="bg-gray-100 p-2 rounded block">npm run build</code>
+          <p class="text-sm text-gray-600 mt-2">
+            Создает оптимизированную сборку в папке dist/
+          </p>
+        </div>
+        <div class="bg-white p-4 rounded-lg border">
+          <h3 class="font-semibold mb-2">Предпросмотр сборки</h3>
+          <code class="bg-gray-100 p-2 rounded block">npm run preview</code>
+          <p class="text-sm text-gray-600 mt-2">
+            Запускает локальный сервер для просмотра prod-сборки
+          </p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-semibold mb-4 text-gray-700">
+        Конфигурация vite.config.js
+      </h2>
+      <div
+        class="bg-gray-800 text-green-400 p-4 rounded-lg mb-6 font-mono text-sm"
+      >
+        <div class="text-gray-300">// vite.config.js</div>
+        <div>
+          <span class="text-blue-300">import</span>
+          <span class="text-white">{ defineConfig }</span>
+          <span class="text-blue-300">from</span>
+          <span class="text-yellow-300">'vite'</span>
+        </div>
+        <br />
+        <div>
+          <span class="text-blue-300">export default</span>
+          <span class="text-yellow-300">defineConfig</span
+          ><span class="text-white">({</span>
+        </div>
+        <div>&nbsp;&nbsp;<span class="text-red-300">server</span>: {</div>
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-red-300">port</span>:
+          <span class="text-yellow-300">3000</span>,
+        </div>
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-red-300">open</span>:
+          <span class="text-yellow-300">true</span>
+        </div>
+        <div>&nbsp;&nbsp;},</div>
+        <div>&nbsp;&nbsp;<span class="text-red-300">build</span>: {</div>
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-red-300">outDir</span>:
+          <span class="text-yellow-300">'dist'</span>
+        </div>
+        <div>&nbsp;&nbsp;}</div>
+        <div class="text-white">})</div>
+      </div>
+
+      <h2 class="text-2xl font-semibold mb-4 text-gray-700">
+        Популярные плагины
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div class="bg-white p-4 rounded-lg border">
+          <h3 class="font-semibold mb-2">@vitejs/plugin-react</h3>
+          <p class="text-sm text-gray-600 mb-2">Поддержка React + JSX</p>
+          <code class="text-xs bg-gray-100 p-1 rounded"
+            >npm i @vitejs/plugin-react</code
+          >
+        </div>
+        <div class="bg-white p-4 rounded-lg border">
+          <h3 class="font-semibold mb-2">@vitejs/plugin-vue</h3>
+          <p class="text-sm text-gray-600 mb-2">Поддержка Vue SFC</p>
+          <code class="text-xs bg-gray-100 p-1 rounded"
+            >npm i @vitejs/plugin-vue</code
+          >
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-semibold mb-4 text-gray-700">
+        Преимущества Vite vs Webpack
+      </h2>
+      <div class="overflow-x-auto mb-6">
+        <table class="min-w-full bg-white border border-gray-300">
+          <thead class="bg-gray-100">
+            <tr>
+              <th class="py-2 px-4 border-b text-left">Критерий</th>
+              <th class="py-2 px-4 border-b text-left">Vite</th>
+              <th class="py-2 px-4 border-b text-left">Webpack</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="py-2 px-4 border-b font-semibold">Скорость запуска</td>
+              <td class="py-2 px-4 border-b text-green-600">⚡ Мгновенно</td>
+              <td class="py-2 px-4 border-b text-orange-600">🐌 Медленно</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="py-2 px-4 border-b font-semibold">HMR</td>
+              <td class="py-2 px-4 border-b text-green-600">⚡ Очень быстро</td>
+              <td class="py-2 px-4 border-b text-orange-600">
+                🐌 Может тормозить
+              </td>
+            </tr>
+            <tr>
+              <td class="py-2 px-4 border-b font-semibold">Настройка</td>
+              <td class="py-2 px-4 border-b text-green-600">📦 Из коробки</td>
+              <td class="py-2 px-4 border-b text-orange-600">⚙️ Сложная</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="py-2 px-4 border-b font-semibold">Экосистема</td>
+              <td class="py-2 px-4 border-b text-orange-600">🌱 Растущая</td>
+              <td class="py-2 px-4 border-b text-green-600">🌳 Огромная</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl font-semibold mb-4 text-gray-700">
+        Практический пример
+      </h2>
+      <div class="bg-blue-50 p-4 rounded-lg mb-6">
+        <h3 class="font-semibold mb-2">Создание простого проекта с Vite:</h3>
+        <ol class="list-decimal pl-6 space-y-2">
+          <li>
+            Запустите
+            <code class="bg-white px-1 rounded"
+              >npm create vite@latest my-app</code
+            >
+          </li>
+          <li>Выберите фреймворк (например, Vanilla)</li>
+          <li>
+            Перейдите в папку:
+            <code class="bg-white px-1 rounded">cd my-app</code>
+          </li>
+          <li>
+            Установите зависимости:
+            <code class="bg-white px-1 rounded">npm install</code>
+          </li>
+          <li>
+            Запустите dev-сервер:
+            <code class="bg-white px-1 rounded">npm run dev</code>
+          </li>
+        </ol>
+      </div>
+
+      <h2 class="text-2xl font-semibold mb-4 text-gray-700">
+        Полезные ресурсы
+      </h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>
+          <a
+            href="https://vitejs.dev/"
+            class="text-blue-600 hover:text-blue-800 underline"
+            >Официальная документация Vite</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://github.com/vitejs/awesome-vite"
+            class="text-blue-600 hover:text-blue-800 underline"
+            >Awesome Vite - плагины и ресурсы</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://vitejs.dev/guide/migration.html"
+            class="text-blue-600 hover:text-blue-800 underline"
+            >Миграция с других инструментов</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
