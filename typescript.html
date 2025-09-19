@@ -16,7 +16,7 @@
       <div class="max-w-4xl mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
           <a
-            href="/index.html"
+            href="./index.html"
             class="flex items-center text-blue-600 hover:text-blue-800 transition-colors group"
           >
             <svg
@@ -246,6 +246,847 @@
         </div>
       </section>
 
+      <!-- Never Type Section -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-semibold mb-8 text-gray-800 flex items-center">
+          <span
+            class="w-1 h-6 bg-gradient-to-b from-red-500 to-pink-500 rounded-full mr-3"
+          ></span>
+          Тип never - "Никогда"
+        </h2>
+
+        <div
+          class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200"
+        >
+          <div class="flex items-start space-x-4 mb-6">
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-600 rounded-lg flex items-center justify-center text-white font-bold text-xl flex-shrink-0"
+            >
+              🚫
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-gray-800 mb-3">
+                Что такое never?
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-4">
+                <code
+                  class="bg-red-100 text-red-800 px-2 py-1 rounded font-semibold"
+                  >never</code
+                >
+                представляет тип значений, которые
+                <strong>никогда не возникают</strong>. Это "пустое множество" в
+                мире типов - тип, который не может содержать никаких значений.
+              </p>
+            </div>
+          </div>
+
+          <!-- Core concept -->
+          <div class="bg-red-50 border border-red-200 rounded-xl p-6 mb-8">
+            <h4
+              class="text-lg font-semibold text-red-800 mb-4 flex items-center"
+            >
+              <span class="text-xl mr-2">🎯</span>
+              Основная идея never
+            </h4>
+            <div class="space-y-4">
+              <div>
+                <p class="text-red-700 mb-3">
+                  <strong>never</strong> означает "это никогда не произойдет". В
+                  контексте типов:
+                </p>
+                <ul class="space-y-2 text-red-700">
+                  <li class="flex items-start">
+                    <span
+                      class="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"
+                    ></span>
+                    <div>
+                      <strong>Функция never возвращает</strong> - если функция
+                      никогда не завершается нормально
+                    </div>
+                  </li>
+                  <li class="flex items-start">
+                    <span
+                      class="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"
+                    ></span>
+                    <div>
+                      <strong>Переменная never содержит</strong> - если
+                      переменная не может содержать никаких значений
+                    </div>
+                  </li>
+                  <li class="flex items-start">
+                    <span
+                      class="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"
+                    ></span>
+                    <div>
+                      <strong>Условие never выполняется</strong> - если условие
+                      логически невозможно
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Use cases -->
+          <div class="space-y-6">
+            <!-- Use case 1 -->
+            <div
+              class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-xl border border-orange-200"
+            >
+              <h5 class="font-semibold text-orange-800 mb-3 flex items-center">
+                <span class="text-lg mr-2">💥</span>
+                Функции, которые никогда не возвращаются
+              </h5>
+              <div
+                class="bg-gray-800 text-green-400 p-4 rounded-lg font-mono text-sm mb-3"
+              >
+                <div class="text-gray-300">
+                  // Функция всегда выбрасывает ошибку
+                </div>
+                <div>
+                  <span class="text-blue-300">function</span>
+                  <span class="text-yellow-300">throwError</span>(<span
+                    class="text-red-300"
+                    >message</span
+                  >: <span class="text-green-300">string</span>):
+                  <span class="text-red-300">never</span> {
+                </div>
+                <div>
+                  &nbsp;&nbsp;<span class="text-blue-300">throw new</span>
+                  <span class="text-yellow-300">Error</span>(<span
+                    class="text-red-300"
+                    >message</span
+                  >)
+                </div>
+                <div>
+                  &nbsp;&nbsp;<span class="text-gray-300"
+                    >// Эта строка никогда не выполнится</span
+                  >
+                </div>
+                <div>}</div>
+                <br />
+                <div class="text-gray-300">// Функция с бесконечным циклом</div>
+                <div>
+                  <span class="text-blue-300">function</span>
+                  <span class="text-yellow-300">infiniteLoop</span>():
+                  <span class="text-red-300">never</span> {
+                </div>
+                <div>
+                  &nbsp;&nbsp;<span class="text-blue-300">while</span> (<span
+                    class="text-green-300"
+                    >true</span
+                  >) {
+                </div>
+                <div>
+                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-yellow-300"
+                    >console</span
+                  >.<span class="text-yellow-300">log</span>(<span
+                    class="text-yellow-300"
+                    >"forever"</span
+                  >)
+                </div>
+                <div>&nbsp;&nbsp;}</div>
+                <div>
+                  &nbsp;&nbsp;<span class="text-gray-300"
+                    >// Эта строка тоже никогда не выполнится</span
+                  >
+                </div>
+                <div>}</div>
+              </div>
+              <p class="text-sm text-orange-700">
+                ✅ Эти функции
+                <strong>никогда не завершаются нормально</strong> - либо ошибка,
+                либо бесконечный цикл
+              </p>
+            </div>
+
+            <!-- Use case 2 -->
+            <div
+              class="bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-xl border border-purple-200"
+            >
+              <h5 class="font-semibold text-purple-800 mb-3 flex items-center">
+                <span class="text-lg mr-2">🎭</span>
+                Исчерпывающие проверки (Exhaustive checks)
+              </h5>
+              <div
+                class="bg-gray-800 text-green-400 p-4 rounded-lg font-mono text-sm mb-3"
+              >
+                <div class="text-gray-300">// Union type</div>
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">Color</span> =
+                  <span class="text-yellow-300">"red"</span> |
+                  <span class="text-yellow-300">"green"</span> |
+                  <span class="text-yellow-300">"blue"</span>
+                </div>
+                <br />
+                <div>
+                  <span class="text-blue-300">function</span>
+                  <span class="text-yellow-300">getColorName</span>(<span
+                    class="text-red-300"
+                    >color</span
+                  >: <span class="text-yellow-300">Color</span>):
+                  <span class="text-green-300">string</span> {
+                </div>
+                <div>
+                  &nbsp;&nbsp;<span class="text-blue-300">switch</span> (<span
+                    class="text-red-300"
+                    >color</span
+                  >) {
+                </div>
+                <div>
+                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-300"
+                    >case</span
+                  >
+                  <span class="text-yellow-300">"red"</span>:
+                </div>
+                <div>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                    class="text-blue-300"
+                    >return</span
+                  >
+                  <span class="text-yellow-300">"Красный"</span>
+                </div>
+                <div>
+                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-300"
+                    >case</span
+                  >
+                  <span class="text-yellow-300">"green"</span>:
+                </div>
+                <div>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                    class="text-blue-300"
+                    >return</span
+                  >
+                  <span class="text-yellow-300">"Зеленый"</span>
+                </div>
+                <div>
+                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-300"
+                    >case</span
+                  >
+                  <span class="text-yellow-300">"blue"</span>:
+                </div>
+                <div>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                    class="text-blue-300"
+                    >return</span
+                  >
+                  <span class="text-yellow-300">"Синий"</span>
+                </div>
+                <div>
+                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-300"
+                    >default</span
+                  >:
+                </div>
+                <div>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                    class="text-gray-300"
+                    >// Если мы сюда попали, то color имеет тип never!</span
+                  >
+                </div>
+                <div>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                    class="text-blue-300"
+                    >const</span
+                  >
+                  <span class="text-red-300">exhaustiveCheck</span>:
+                  <span class="text-red-300">never</span> =
+                  <span class="text-red-300">color</span>
+                </div>
+                <div>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                    class="text-blue-300"
+                    >throw new</span
+                  >
+                  <span class="text-yellow-300">Error</span>(<span
+                    class="text-yellow-300"
+                    >`Неизвестный цвет: ${<span class="text-red-300"
+                      >exhaustiveCheck</span
+                    >}`</span
+                  >)
+                </div>
+                <div>&nbsp;&nbsp;}</div>
+                <div>}</div>
+              </div>
+              <p class="text-sm text-purple-700">
+                ✅ В default ветке color имеет тип
+                <code class="bg-purple-100 px-1 rounded">never</code>, потому
+                что все возможные случаи уже обработаны!
+              </p>
+            </div>
+
+            <!-- Use case 3 -->
+            <div
+              class="bg-gradient-to-r from-blue-50 to-cyan-50 p-6 rounded-xl border border-blue-200"
+            >
+              <h5 class="font-semibold text-blue-800 mb-3 flex items-center">
+                <span class="text-lg mr-2">🔧</span>
+                never в условных типах
+              </h5>
+              <div
+                class="bg-gray-800 text-green-400 p-4 rounded-lg font-mono text-sm mb-3"
+              >
+                <div class="text-gray-300">
+                  // Фильтруем типы с помощью never
+                </div>
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">OnlyStrings</span>&lt;<span
+                    class="text-red-300"
+                    >T</span
+                  >&gt; = <span class="text-red-300">T</span>
+                  <span class="text-blue-300">extends</span>
+                  <span class="text-green-300">string</span> ?
+                  <span class="text-red-300">T</span> :
+                  <span class="text-red-300">never</span>
+                </div>
+                <br />
+                <div class="text-gray-300">// Примеры:</div>
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">Test1</span> =
+                  <span class="text-yellow-300">OnlyStrings</span>&lt;<span
+                    class="text-yellow-300"
+                    >"hello"</span
+                  >&gt; <span class="text-gray-300">// "hello"</span>
+                </div>
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">Test2</span> =
+                  <span class="text-yellow-300">OnlyStrings</span>&lt;<span
+                    class="text-green-300"
+                    >number</span
+                  >&gt; <span class="text-gray-300">// never</span>
+                </div>
+                <br />
+                <div class="text-gray-300">
+                  // В union типах never исчезает!
+                </div>
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">Filtered</span> =
+                  <span class="text-yellow-300">OnlyStrings</span>&lt;<span
+                    class="text-green-300"
+                    >string</span
+                  >
+                  | <span class="text-green-300">number</span> |
+                  <span class="text-green-300">boolean</span>&gt;
+                </div>
+                <div class="text-gray-300">
+                  // string | never | never = string
+                </div>
+              </div>
+              <p class="text-sm text-blue-700">
+                ✅ <code class="bg-blue-100 px-1 rounded">never</code> в union
+                типах автоматически удаляется! Это мощный инструмент для
+                фильтрации.
+              </p>
+            </div>
+          </div>
+
+          <!-- Important Properties -->
+          <div
+            class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border border-amber-200 mt-6"
+          >
+            <h4
+              class="text-lg font-semibold text-amber-800 mb-4 flex items-center"
+            >
+              <span class="text-xl mr-2">⚡</span>
+              Важные свойства never
+            </h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="bg-white p-4 rounded-lg border border-amber-300">
+                <h5 class="font-semibold text-amber-800 mb-2 flex items-center">
+                  <span class="mr-2">🔄</span>
+                  В Union типах
+                </h5>
+                <div
+                  class="bg-gray-800 text-green-400 p-3 rounded font-mono text-xs mb-2"
+                >
+                  <div>
+                    <span class="text-red-300">never</span> |
+                    <span class="text-green-300">string</span> =
+                    <span class="text-green-300">string</span>
+                  </div>
+                  <div>
+                    <span class="text-red-300">never</span> |
+                    <span class="text-green-300">number</span> |
+                    <span class="text-green-300">boolean</span> =
+                    <span class="text-green-300">number</span> |
+                    <span class="text-green-300">boolean</span>
+                  </div>
+                </div>
+                <p class="text-amber-700 text-sm">
+                  never "исчезает" из union типов
+                </p>
+              </div>
+
+              <div class="bg-white p-4 rounded-lg border border-amber-300">
+                <h5 class="font-semibold text-amber-800 mb-2 flex items-center">
+                  <span class="mr-2">↗️</span>
+                  Присваивание
+                </h5>
+                <div
+                  class="bg-gray-800 text-green-400 p-3 rounded font-mono text-xs mb-2"
+                >
+                  <div class="text-gray-300">
+                    // never можно присвоить любому типу
+                  </div>
+                  <div>
+                    <span class="text-blue-300">const</span>
+                    <span class="text-red-300">str</span>:
+                    <span class="text-green-300">string</span> =
+                    <span class="text-red-300">neverValue</span>
+                    <span class="text-gray-300">// ✅</span>
+                  </div>
+                  <div class="text-gray-300">
+                    // но никакой тип нельзя присвоить never
+                  </div>
+                  <div>
+                    <span class="text-blue-300">const</span>
+                    <span class="text-red-300">nev</span>:
+                    <span class="text-red-300">never</span> =
+                    <span class="text-yellow-300">"hello"</span>
+                    <span class="text-gray-300">// ❌</span>
+                  </div>
+                </div>
+                <p class="text-amber-700 text-sm">never - подтип всех типов</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Real world usage -->
+          <div
+            class="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-xl border border-green-200 mt-6"
+          >
+            <h4
+              class="text-lg font-semibold text-green-800 mb-4 flex items-center"
+            >
+              <span class="text-xl mr-2">🚀</span>
+              Практическое применение
+            </h4>
+            <div class="space-y-4">
+              <div>
+                <h5 class="font-semibold text-green-800 mb-2">
+                  1. Обработка ошибок в utility типах
+                </h5>
+                <div
+                  class="bg-gray-800 text-green-400 p-3 rounded font-mono text-sm"
+                >
+                  <div>
+                    <span class="text-blue-300">type</span>
+                    <span class="text-yellow-300">SafeGet</span>&lt;<span
+                      class="text-red-300"
+                      >T</span
+                    >, <span class="text-red-300">K</span>&gt; =
+                    <span class="text-red-300">K</span>
+                    <span class="text-blue-300">extends</span>
+                    <span class="text-blue-300">keyof</span>
+                    <span class="text-red-300">T</span> ?
+                    <span class="text-red-300">T</span>[<span
+                      class="text-red-300"
+                      >K</span
+                    >] : <span class="text-red-300">never</span>
+                  </div>
+                  <div class="text-gray-300">
+                    // Возвращает never, если ключ не существует
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h5 class="font-semibold text-green-800 mb-2">
+                  2. Фильтрация типов
+                </h5>
+                <div
+                  class="bg-gray-800 text-green-400 p-3 rounded font-mono text-sm"
+                >
+                  <div>
+                    <span class="text-blue-300">type</span>
+                    <span class="text-yellow-300">NonFunction</span>&lt;<span
+                      class="text-red-300"
+                      >T</span
+                    >&gt; = <span class="text-red-300">T</span>
+                    <span class="text-blue-300">extends</span>
+                    <span class="text-yellow-300">Function</span> ?
+                    <span class="text-red-300">never</span> :
+                    <span class="text-red-300">T</span>
+                  </div>
+                  <div class="text-gray-300">
+                    // Убирает функции из union типа
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Conditional Types Section -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-semibold mb-8 text-gray-800 flex items-center">
+          <span
+            class="w-1 h-6 bg-gradient-to-b from-indigo-500 to-blue-500 rounded-full mr-3"
+          ></span>
+          Условные типы (Conditional Types)
+        </h2>
+
+        <div
+          class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200"
+        >
+          <div class="flex items-start space-x-4 mb-6">
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl flex-shrink-0"
+            >
+              🔀
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-gray-800 mb-3">
+                Что такое условные типы?
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-4">
+                <strong>Условные типы</strong> позволяют создавать типы, которые
+                выбираются на основе условий. Это как
+                <code class="bg-gray-100 px-1 rounded">if-else</code> для типов!
+              </p>
+            </div>
+          </div>
+
+          <!-- Basic Syntax -->
+          <div class="mb-8">
+            <h4
+              class="text-lg font-semibold text-gray-800 mb-4 flex items-center"
+            >
+              <span class="w-2 h-2 bg-indigo-500 rounded-full mr-2"></span>
+              Базовый синтаксис
+            </h4>
+            <div
+              class="bg-gray-800 text-green-400 p-4 rounded-lg font-mono text-sm mb-4"
+            >
+              <div class="text-gray-300">// Общая схема условного типа</div>
+              <div>
+                <span class="text-red-300">T</span>
+                <span class="text-blue-300">extends</span>
+                <span class="text-yellow-300">U</span> ?
+                <span class="text-green-300">X</span> :
+                <span class="text-purple-300">Y</span>
+              </div>
+              <br />
+              <div class="text-gray-300">
+                // Читается как: "Если T расширяет U, то X, иначе Y"
+              </div>
+            </div>
+            <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+              <p class="text-blue-800 text-sm">
+                <strong>📝 Принцип:</strong> Если тип
+                <code class="bg-blue-100 px-1 rounded">T</code> может быть
+                присвоен типу
+                <code class="bg-blue-100 px-1 rounded">U</code> (совместим с
+                ним), то результат будет
+                <code class="bg-blue-100 px-1 rounded">X</code>, иначе
+                <code class="bg-blue-100 px-1 rounded">Y</code>
+              </p>
+            </div>
+          </div>
+
+          <!-- Simple Examples -->
+          <div class="space-y-6">
+            <!-- Example 1 -->
+            <div
+              class="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-xl border border-green-200"
+            >
+              <h5 class="font-semibold text-green-800 mb-3 flex items-center">
+                <span class="text-lg mr-2">🎯</span>
+                Простой пример: проверка на строку
+              </h5>
+              <div
+                class="bg-gray-800 text-green-400 p-4 rounded-lg font-mono text-sm mb-3"
+              >
+                <div class="text-gray-300">
+                  // Проверяем, является ли тип строкой
+                </div>
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">IsString</span>&lt;<span
+                    class="text-red-300"
+                    >T</span
+                  >&gt; = <span class="text-red-300">T</span>
+                  <span class="text-blue-300">extends</span>
+                  <span class="text-green-300">string</span> ?
+                  <span class="text-green-300">true</span> :
+                  <span class="text-red-300">false</span>
+                </div>
+                <br />
+                <div class="text-gray-300">// Примеры использования:</div>
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">Test1</span> =
+                  <span class="text-yellow-300">IsString</span>&lt;<span
+                    class="text-green-300"
+                    >string</span
+                  >&gt; <span class="text-gray-300">// true</span>
+                </div>
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">Test2</span> =
+                  <span class="text-yellow-300">IsString</span>&lt;<span
+                    class="text-green-300"
+                    >number</span
+                  >&gt; <span class="text-gray-300">// false</span>
+                </div>
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">Test3</span> =
+                  <span class="text-yellow-300">IsString</span>&lt;<span
+                    class="text-yellow-300"
+                    >"hello"</span
+                  >&gt;
+                  <span class="text-gray-300">// true (литерал строки)</span>
+                </div>
+              </div>
+              <p class="text-sm text-green-700">
+                ✅ Условный тип проверяет совместимость и возвращает
+                boolean-литерал
+              </p>
+            </div>
+
+            <!-- Example 2 -->
+            <div
+              class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-200"
+            >
+              <h5 class="font-semibold text-blue-800 mb-3 flex items-center">
+                <span class="text-lg mr-2">🔧</span>
+                Выбор типа на основе условия
+              </h5>
+              <div
+                class="bg-gray-800 text-green-400 p-4 rounded-lg font-mono text-sm mb-3"
+              >
+                <div class="text-gray-300">
+                  // Выбираем тип на основе входного типа
+                </div>
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">ApiResponse</span>&lt;<span
+                    class="text-red-300"
+                    >T</span
+                  >&gt; = <span class="text-red-300">T</span>
+                  <span class="text-blue-300">extends</span>
+                  <span class="text-green-300">string</span> ? {
+                  <span class="text-red-300">message</span>:
+                  <span class="text-red-300">T</span> } : {
+                  <span class="text-red-300">data</span>:
+                  <span class="text-red-300">T</span> }
+                </div>
+                <br />
+                <div class="text-gray-300">// Примеры:</div>
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">StringResponse</span> =
+                  <span class="text-yellow-300">ApiResponse</span>&lt;<span
+                    class="text-yellow-300"
+                    >"error"</span
+                  >&gt;
+                </div>
+                <div class="text-gray-300">// { message: "error" }</div>
+                <br />
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">DataResponse</span> =
+                  <span class="text-yellow-300">ApiResponse</span>&lt;{
+                  <span class="text-red-300">id</span>:
+                  <span class="text-green-300">number</span> }&gt;
+                </div>
+                <div class="text-gray-300">// { data: { id: number } }</div>
+              </div>
+              <p class="text-sm text-blue-700">
+                ✅ Условные типы позволяют создавать разные структуры в
+                зависимости от входа
+              </p>
+            </div>
+
+            <!-- Example 3 -->
+            <div
+              class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-200"
+            >
+              <h5 class="font-semibold text-purple-800 mb-3 flex items-center">
+                <span class="text-lg mr-2">🎭</span>
+                Проверка на массив
+              </h5>
+              <div
+                class="bg-gray-800 text-green-400 p-4 rounded-lg font-mono text-sm mb-3"
+              >
+                <div class="text-gray-300">
+                  // Проверяем, является ли тип массивом
+                </div>
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">IsArray</span>&lt;<span
+                    class="text-red-300"
+                    >T</span
+                  >&gt; = <span class="text-red-300">T</span>
+                  <span class="text-blue-300">extends</span>
+                  <span class="text-green-300">any</span>[] ?
+                  <span class="text-green-300">true</span> :
+                  <span class="text-red-300">false</span>
+                </div>
+                <br />
+                <div class="text-gray-300">// Примеры:</div>
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">Test1</span> =
+                  <span class="text-yellow-300">IsArray</span>&lt;<span
+                    class="text-green-300"
+                    >string</span
+                  >[]&gt; <span class="text-gray-300">// true</span>
+                </div>
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">Test2</span> =
+                  <span class="text-yellow-300">IsArray</span>&lt;<span
+                    class="text-green-300"
+                    >number</span
+                  >&gt; <span class="text-gray-300">// false</span>
+                </div>
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">Test3</span> =
+                  <span class="text-yellow-300">IsArray</span>&lt;[<span
+                    class="text-green-300"
+                    >string</span
+                  >, <span class="text-green-300">number</span>]&gt;
+                  <span class="text-gray-300">// true (tuple тоже массив)</span>
+                </div>
+              </div>
+              <p class="text-sm text-purple-700">
+                ✅
+                <code class="bg-purple-100 px-1 rounded">any[]</code> означает
+                "любой массив"
+              </p>
+            </div>
+          </div>
+
+          <!-- Advanced Usage -->
+          <div
+            class="bg-yellow-50 border border-yellow-200 rounded-xl p-6 mt-6"
+          >
+            <h4
+              class="text-lg font-semibold text-yellow-800 mb-4 flex items-center"
+            >
+              <span class="text-xl mr-2">🚀</span>
+              Продвинутое использование
+            </h4>
+            <div class="space-y-4">
+              <div>
+                <h5 class="font-semibold text-yellow-800 mb-2">
+                  Вложенные условные типы:
+                </h5>
+                <div
+                  class="bg-gray-800 text-green-400 p-3 rounded font-mono text-sm"
+                >
+                  <div>
+                    <span class="text-blue-300">type</span>
+                    <span class="text-yellow-300">DeepCheck</span>&lt;<span
+                      class="text-red-300"
+                      >T</span
+                    >&gt; =
+                  </div>
+                  <div>
+                    &nbsp;&nbsp;<span class="text-red-300">T</span>
+                    <span class="text-blue-300">extends</span>
+                    <span class="text-green-300">string</span> ?
+                    <span class="text-yellow-300">"string"</span> :
+                  </div>
+                  <div>
+                    &nbsp;&nbsp;<span class="text-red-300">T</span>
+                    <span class="text-blue-300">extends</span>
+                    <span class="text-green-300">number</span> ?
+                    <span class="text-yellow-300">"number"</span> :
+                  </div>
+                  <div>
+                    &nbsp;&nbsp;<span class="text-red-300">T</span>
+                    <span class="text-blue-300">extends</span>
+                    <span class="text-green-300">any</span>[] ?
+                    <span class="text-yellow-300">"array"</span> :
+                  </div>
+                  <div>
+                    &nbsp;&nbsp;<span class="text-yellow-300">"other"</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h5 class="font-semibold text-yellow-800 mb-2">
+                  Условные типы и дженерики:
+                </h5>
+                <div
+                  class="bg-gray-800 text-green-400 p-3 rounded font-mono text-sm"
+                >
+                  <div>
+                    <span class="text-blue-300">type</span>
+                    <span class="text-yellow-300">NonNullable</span>&lt;<span
+                      class="text-red-300"
+                      >T</span
+                    >&gt; = <span class="text-red-300">T</span>
+                    <span class="text-blue-300">extends</span>
+                    <span class="text-green-300">null</span> |
+                    <span class="text-green-300">undefined</span> ?
+                    <span class="text-gray-300">never</span> :
+                    <span class="text-red-300">T</span>
+                  </div>
+                  <div class="text-gray-300">
+                    // Убирает null и undefined из типа
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Connection to infer -->
+          <div
+            class="bg-gradient-to-r from-purple-100 to-pink-100 p-6 rounded-xl border border-purple-300 mt-6"
+          >
+            <h4
+              class="text-lg font-semibold text-purple-800 mb-3 flex items-center"
+            >
+              <span class="text-xl mr-2">🔗</span>
+              Связь с infer
+            </h4>
+            <p class="text-purple-700 mb-3">
+              <strong>Условные типы</strong> — это основа для понимания
+              <code class="bg-purple-200 px-1 rounded">infer</code>!
+            </p>
+            <div class="bg-white p-4 rounded-lg border border-purple-200">
+              <div
+                class="bg-gray-800 text-green-400 p-3 rounded font-mono text-sm mb-3"
+              >
+                <div class="text-gray-300">
+                  // infer можно использовать только в условных типах
+                </div>
+                <div>
+                  <span class="text-blue-3000">type</span>
+                  <span class="text-yellow-300">GetFirst</span>&lt;<span
+                    class="text-red-300"
+                    >T</span
+                  >&gt; = <span class="text-red-300">T</span>
+                  <span class="text-blue-300">extends</span> [<span
+                    class="text-purple-300"
+                    >infer U</span
+                  >, ...<span class="text-green-300">any</span>] ?
+                  <span class="text-purple-300">U</span> :
+                  <span class="text-gray-300">never</span>
+                </div>
+                <div class="text-gray-300">
+                  // ↑ Условный тип ↑ infer ↑ ветка true ↑ ветка false
+                </div>
+              </div>
+              <p class="text-purple-700 text-sm">
+                Без понимания условных типов,
+                <code class="bg-purple-200 px-1 rounded">infer</code> не имеет
+                смысла!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Infer Section -->
       <section class="mb-12">
         <h2 class="text-2xl font-semibold mb-8 text-gray-800 flex items-center">
@@ -463,7 +1304,27 @@
                 // Хотим: { id: number, email: string }
               </div>
               <br />
-              <div class="text-gray-300">// Решение с infer:</div>
+              <div class="text-red-300">
+                // ❌ Проблема: если пытаемся получить тип возвращаемого
+                значения
+              </div>
+              <div>
+                <span class="text-blue-300">type</span>
+                <span class="text-yellow-300">WrongType</span> =
+                <span class="text-yellow-300">ReturnType</span>&lt;<span
+                  class="text-blue-300"
+                  >typeof</span
+                >
+                <span class="text-yellow-300">fetchUser</span>&gt;
+              </div>
+              <div class="text-red-300">
+                // WrongType = Promise&lt;{ id: number, email: string }&gt; 😞
+              </div>
+              <div class="text-red-300">
+                // Это НЕ то что нам нужно! Нам нужны сами данные, а не Promise!
+              </div>
+              <br />
+              <div class="text-gray-300">// ✅ Решение с infer:</div>
               <div>
                 <span class="text-blue-300">type</span>
                 <span class="text-yellow-300">Awaited</span>&lt;<span
@@ -496,6 +1357,152 @@
               чистый тип данных, которые возвращает API! Теперь можно
               использовать User для типизации других частей приложения.
             </p>
+          </div>
+
+          <!-- Visual comparison -->
+          <div
+            class="bg-gradient-to-r from-amber-50 to-orange-50 p-6 rounded-xl border border-amber-200 mb-6"
+          >
+            <h4
+              class="text-lg font-semibold text-amber-800 mb-4 flex items-center"
+            >
+              <span class="text-xl mr-2">🎯</span>
+              Наглядная разница: Promise vs Результат
+            </h4>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Without infer -->
+              <div class="bg-red-100 p-4 rounded-lg border border-red-300">
+                <h5 class="font-semibold text-red-800 mb-3 flex items-center">
+                  <span class="mr-2">❌</span>
+                  Без infer - получаем Promise
+                </h5>
+                <div
+                  class="bg-gray-800 text-red-400 p-3 rounded font-mono text-xs mb-3"
+                >
+                  <div>
+                    <span class="text-blue-300">type</span>
+                    <span class="text-yellow-300">BadType</span> =
+                    <span class="text-yellow-300">ReturnType</span>&lt;<span
+                      class="text-blue-300"
+                      >typeof</span
+                    >
+                    <span class="text-yellow-300">fetchUser</span>&gt;
+                  </div>
+                  <br />
+                  <div class="text-gray-300">// Результат:</div>
+                  <div class="text-red-400">Promise&lt;{</div>
+                  <div>
+                    &nbsp;&nbsp;<span class="text-red-300">id</span>:
+                    <span class="text-green-300">number</span>,
+                  </div>
+                  <div>
+                    &nbsp;&nbsp;<span class="text-red-300">email</span>:
+                    <span class="text-green-300">string</span>
+                  </div>
+                  <div class="text-red-400">}&gt;</div>
+                </div>
+                <div class="text-red-700 text-sm">
+                  <strong>Проблема:</strong> Тип включает Promise! Это не то,
+                  что нам нужно для переменных в коде.
+                </div>
+              </div>
+
+              <!-- With infer -->
+              <div class="bg-green-100 p-4 rounded-lg border border-green-300">
+                <h5 class="font-semibold text-green-800 mb-3 flex items-center">
+                  <span class="mr-2">✅</span>
+                  С infer - получаем чистые данные
+                </h5>
+                <div
+                  class="bg-gray-800 text-green-400 p-3 rounded font-mono text-xs mb-3"
+                >
+                  <div>
+                    <span class="text-blue-300">type</span>
+                    <span class="text-yellow-300">GoodType</span> =
+                    <span class="text-yellow-300">Awaited</span>&lt;<span
+                      class="text-yellow-300"
+                      >ReturnType</span
+                    >&lt;<span class="text-blue-300">typeof</span>
+                    <span class="text-yellow-300">fetchUser</span>&gt;&gt;
+                  </div>
+                  <br />
+                  <div class="text-gray-300">// Результат:</div>
+                  <div class="text-green-400">{</div>
+                  <div>
+                    &nbsp;&nbsp;<span class="text-red-300">id</span>:
+                    <span class="text-green-300">number</span>,
+                  </div>
+                  <div>
+                    &nbsp;&nbsp;<span class="text-red-300">email</span>:
+                    <span class="text-green-300">string</span>
+                  </div>
+                  <div class="text-green-400">}</div>
+                </div>
+                <div class="text-green-700 text-sm">
+                  <strong>Решение:</strong> Чистый тип данных! Можно
+                  использовать для переменных, параметров, интерфейсов.
+                </div>
+              </div>
+            </div>
+
+            <!-- Usage example -->
+            <div class="bg-white p-4 rounded-lg border border-amber-300 mt-4">
+              <h5 class="font-semibold text-amber-800 mb-3">
+                Пример использования:
+              </h5>
+              <div
+                class="bg-gray-800 text-green-400 p-3 rounded font-mono text-sm"
+              >
+                <div class="text-gray-300">
+                  // Теперь можем использовать чистый тип для переменных
+                </div>
+                <div>
+                  <span class="text-blue-300">type</span>
+                  <span class="text-yellow-300">User</span> =
+                  <span class="text-yellow-300">Awaited</span>&lt;<span
+                    class="text-yellow-300"
+                    >ReturnType</span
+                  >&lt;<span class="text-blue-300">typeof</span>
+                  <span class="text-yellow-300">fetchUser</span>&gt;&gt;
+                </div>
+                <br />
+                <div>
+                  <span class="text-blue-300">function</span>
+                  <span class="text-yellow-300">processUser</span>(<span
+                    class="text-red-300"
+                    >user</span
+                  >: <span class="text-yellow-300">User</span>) {
+                </div>
+                <div>
+                  &nbsp;&nbsp;<span class="text-yellow-300">console</span>.<span
+                    class="text-yellow-300"
+                    >log</span
+                  >(<span class="text-red-300">user</span>.<span
+                    class="text-red-300"
+                    >id</span
+                  >, <span class="text-red-300">user</span>.<span
+                    class="text-red-300"
+                    >email</span
+                  >) <span class="text-gray-300">// ✅ Работает!</span>
+                </div>
+                <div>}</div>
+                <br />
+                <div>
+                  <span class="text-blue-300">const</span>
+                  <span class="text-red-300">userData</span>:
+                  <span class="text-yellow-300">User</span> =
+                  <span class="text-blue-300">await</span>
+                  <span class="text-yellow-300">fetchUser</span>()
+                </div>
+                <div>
+                  <span class="text-yellow-300">processUser</span>(<span
+                    class="text-red-300"
+                    >userData</span
+                  >) <span class="text-gray-300">// ✅ Типы совпадают!</span>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Basic Syntax -->
@@ -780,6 +1787,280 @@
                 </div>
               </li>
             </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Beginner Tips Section -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-semibold mb-8 text-gray-800 flex items-center">
+          <span
+            class="w-1 h-6 bg-gradient-to-b from-green-500 to-emerald-500 rounded-full mr-3"
+          ></span>
+          Советы новичкам
+        </h2>
+
+        <div class="grid gap-6">
+          <!-- Tip 1: Start Simple -->
+          <article
+            class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
+          >
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl flex-shrink-0"
+              >
+                🌱
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                  Начни с малого, освой базу
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                  <strong>Не зацикливайся на сложных типах!</strong> Сначала
+                  изучи основы: примитивные типы, интерфейсы, базовые дженерики.
+                  Сложные конструкции вроде mapped types и conditional types
+                  изучай постепенно, когда поймешь фундамент.
+                </p>
+                <div class="mt-3 flex flex-wrap gap-2">
+                  <span
+                    class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full"
+                    >string, number, boolean</span
+                  >
+                  <span
+                    class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full"
+                    >interface</span
+                  >
+                  <span
+                    class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full"
+                    >type</span
+                  >
+                  <span
+                    class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full"
+                    >Array&lt;T&gt;</span
+                  >
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tip 2: Pet Projects -->
+          <article
+            class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
+          >
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-xl flex-shrink-0"
+              >
+                🚀
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                  Лучшая тренировка — пет-проекты
+                </h3>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                  Теория без практики — мертва! Создавай реальные проекты, где
+                  можешь применить изученные концепции TypeScript. Это гораздо
+                  эффективнее абстрактных задачек.
+                </p>
+
+                <div
+                  class="bg-purple-50 p-4 rounded-lg border border-purple-200"
+                >
+                  <h4 class="font-semibold text-purple-800 mb-3">
+                    🎯 Рекомендуемые проекты:
+                  </h4>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div class="flex items-center space-x-2">
+                      <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
+                      <span class="text-sm text-purple-700"
+                        >🛒 Интернет-магазины</span
+                      >
+                    </div>
+                    <div class="flex items-center space-x-2">
+                      <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
+                      <span class="text-sm text-purple-700"
+                        >📱 Клоны соц. сетей</span
+                      >
+                    </div>
+                    <div class="flex items-center space-x-2">
+                      <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
+                      <span class="text-sm text-purple-700"
+                        >📝 Todo-приложения</span
+                      >
+                    </div>
+                    <div class="flex items-center space-x-2">
+                      <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
+                      <span class="text-sm text-purple-700"
+                        >🎵 Музыкальные плееры</span
+                      >
+                    </div>
+                  </div>
+                  <p class="text-xs text-purple-600 mt-3">
+                    <strong>Важно:</strong> Проекты по интересам —
+                    второстепенное. Сначала освой типовые паттерны!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tip 3: Emergency Tools -->
+          <article
+            class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
+          >
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center text-white font-bold text-xl flex-shrink-0"
+              >
+                🆘
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                  Инструменты "экстренной помощи"
+                </h3>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                  Не можешь разобраться со сложным типом? Есть "аварийные"
+                  инструменты, но используй их
+                  <strong>ТОЛЬКО в пет-проектах</strong> для обучения!
+                </p>
+
+                <div class="space-y-3">
+                  <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                    <h4
+                      class="font-semibold text-red-800 mb-3 flex items-center"
+                    >
+                      <span class="mr-2">⚠️</span>
+                      НЕ ЗЛОУПОТРЕБЛЯЙ в production!
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                      <div class="bg-white p-3 rounded border border-red-300">
+                        <code class="text-red-700 font-semibold">any</code>
+                        <p class="text-xs text-red-600 mt-1">
+                          Отключает все проверки
+                        </p>
+                      </div>
+                      <div class="bg-white p-3 rounded border border-red-300">
+                        <code class="text-red-700 font-semibold"
+                          >@ts-ignore</code
+                        >
+                        <p class="text-xs text-red-600 mt-1">
+                          Игнорирует ошибку
+                        </p>
+                      </div>
+                      <div class="bg-white p-3 rounded border border-red-300">
+                        <code class="text-red-700 font-semibold">as Type</code>
+                        <p class="text-xs text-red-600 mt-1">
+                          Принудительное приведение
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="bg-green-50 p-4 rounded-lg border border-green-200"
+                  >
+                    <h4
+                      class="font-semibold text-green-800 mb-2 flex items-center"
+                    >
+                      <span class="mr-2">✅</span>
+                      Правильная стратегия:
+                    </h4>
+                    <ol
+                      class="list-decimal list-inside space-y-1 text-green-700 text-sm"
+                    >
+                      <li>Попробуй разобраться с типом самостоятельно</li>
+                      <li>Погугли или спроси на Stack Overflow</li>
+                      <li>
+                        Если совсем не получается — используй
+                        <code class="bg-green-100 px-1 rounded">any</code>
+                      </li>
+                      <li>
+                        Обязательно вернись к этому месту позже и переделай
+                        правильно!
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tip 4: Practice Focus -->
+          <article
+            class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
+          >
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center text-white font-bold text-xl flex-shrink-0"
+              >
+                💪
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                  Больше практики, меньше теории
+                </h3>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                  Абстрактные задачки на типы — это хорошо для понимания
+                  концепций, но реальные проекты дают гораздо больше опыта и
+                  понимания того, как TypeScript работает в настоящей
+                  разработке.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                    <h5
+                      class="font-semibold text-red-800 mb-2 flex items-center"
+                    >
+                      <span class="mr-2">❌</span>
+                      Меньше этого:
+                    </h5>
+                    <ul class="space-y-1 text-red-700 text-sm">
+                      <li>• Задачки type-challenges</li>
+                      <li>• Абстрактные упражнения</li>
+                      <li>• Только чтение документации</li>
+                    </ul>
+                  </div>
+
+                  <div
+                    class="bg-green-50 p-4 rounded-lg border border-green-200"
+                  >
+                    <h5
+                      class="font-semibold text-green-800 mb-2 flex items-center"
+                    >
+                      <span class="mr-2">✅</span>
+                      Больше этого:
+                    </h5>
+                    <ul class="space-y-1 text-green-700 text-sm">
+                      <li>• Реальные пет-проекты</li>
+                      <li>• Типизация API ответов</li>
+                      <li>• Компоненты с пропсами</li>
+                      <li>• Бизнес-логика приложений</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Summary Card -->
+        <div
+          class="mt-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 border border-blue-200"
+        >
+          <h3
+            class="text-lg font-semibold text-blue-800 mb-4 flex items-center"
+          >
+            <span class="mr-2">🎯</span>
+            Главное правило успеха
+          </h3>
+          <div class="bg-white p-4 rounded-lg border border-blue-300">
+            <p class="text-blue-800 text-center font-semibold text-lg mb-2">
+              "Лучше сделать 10 простых проектов с базовыми типами,<br />
+              чем потратить месяц на изучение сложных конструкций"
+            </p>
+            <p class="text-blue-600 text-center text-sm">
+              TypeScript изучается на практике, а не в теории! 🚀
+            </p>
           </div>
         </div>
       </section>

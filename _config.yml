@@ -1,0 +1,11 @@
+# GitHub Pages настройки
+baseurl: "/programming_notes"
+url: "https://almasf.github.io"
+
+# Настройки Jekyll (если используете)
+plugins:
+  - jekyll-relative-links
+
+relative_links:
+  enabled: true
+  collections: true
