@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>JavaScript 2025 — Современный JS</title>
+    <style>
+      pre {
+        max-width: 100%;
+        white-space: pre-wrap;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+      }
+      @media (min-width: 768px) {
+        pre {
+          white-space: pre;
+          word-break: normal;
+          overflow-wrap: normal;
+        }
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-gradient-to-br from-yellow-50 via-white to-blue-50">
+    <header class="bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-10">
+      <div class="max-w-5xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <a href="./index.html" class="mr-4 text-gray-600 hover:text-gray-800 transition-colors">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+              </svg>
+            </a>
+            <h1 class="text-3xl font-bold bg-gradient-to-r from-yellow-600 to-blue-600 bg-clip-text text-transparent">
+              ⚡ JavaScript 2025 — Современный JS
+            </h1>
+          </div>
+          <div class="hidden md:flex items-center space-x-4">
+            <span class="text-sm text-gray-500">Обновлено: 22.09.2025</span>
+            <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="max-w-5xl mx-auto px-6 py-8">
+      <nav class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200 mb-8">
+        <h2 class="text-xl font-semibold text-gray-800 mb-4">📋 Содержание</h2>
+        <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 text-sm">
+          <li><a href="#let-const" class="text-blue-600 hover:text-blue-800">let и const</a></li>
+          <li><a href="#arrow-functions" class="text-blue-600 hover:text-blue-800">Стрелочные функции</a></li>
+          <li><a href="#template-literals" class="text-blue-600 hover:text-blue-800">Шаблонные строки</a></li>
+          <li><a href="#destructuring" class="text-blue-600 hover:text-blue-800">Деструктуризация</a></li>
+          <li><a href="#default-params" class="text-blue-600 hover:text-blue-800">Параметры по умолчанию</a></li>
+          <li><a href="#spread-rest" class="text-blue-600 hover:text-blue-800">Spread / Rest</a></li>
+          <li><a href="#modules" class="text-blue-600 hover:text-blue-800">ES Модули</a></li>
+          <li><a href="#promises" class="text-blue-600 hover:text-blue-800">Промисы</a></li>
+          <li><a href="#async-await" class="text-blue-600 hover:text-blue-800">async / await</a></li>
+          <li><a href="#fetch" class="text-blue-600 hover:text-blue-800">fetch API</a></li>
+          <li><a href="#array-methods" class="text-blue-600 hover:text-blue-800">Методы массивов</a></li>
+          <li><a href="#dom" class="text-blue-600 hover:text-blue-800">DOM-манипуляции</a></li>
+          <li><a href="#error-handling" class="text-blue-600 hover:text-blue-800">Обработка ошибок</a></li>
+        </ul>
+      </nav>
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+          <span class="w-1 h-8 bg-gradient-to-b from-yellow-500 to-blue-500 rounded-full mr-3"></span>
+          Современный синтаксис и возможности (ES6+)
+        </h2>
+        <div class="space-y-8">
+          <div id="let-const" class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">let и const</h3>
+            <ul class="text-gray-700 mb-2 text-sm list-disc pl-5">
+              <li><code>let</code> и <code>const</code> имеют блочную область видимости (в отличие от <code>var</code>).</li>
+              <li><code>const</code> для неизменяемых ссылок, <code>let</code> — для изменяемых переменных.</li>
+              <li>Не поднимаются (hoisting) как <code>var</code>.</li>
+            </ul>
+            <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>let count = 5;
+const name = "Alex";
+// var old = 1; // устарело</code></pre>
+          </div>
+          <div id="arrow-functions" class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">Стрелочные функции (() =&gt; {})</h3>
+            <ul class="text-gray-700 mb-2 text-sm list-disc pl-5">
+              <li>Краткий синтаксис для функций.</li>
+              <li>Лексический <code>this</code> (не создают свой контекст).</li>
+            </ul>
+            <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>const sum = (a, b) =&gt; a + b;
+const sayHi = name =&gt; console.log(`Привет, ${name}!`);
+</code></pre>
+          </div>
+          <div id="template-literals" class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">Шаблонные строки (Template Literals)</h3>
+            <ul class="text-gray-700 mb-2 text-sm list-disc pl-5">
+              <li>Позволяют вставлять переменные и выражения внутрь строки.</li>
+              <li>Многострочные строки без конкатенации.</li>
+            </ul>
+            <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>const name = "Alex";
+const message = `Привет, ${name}!`;
+</code></pre>
+          </div>
+          <div id="destructuring" class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">Деструктуризация</h3>
+            <ul class="text-gray-700 mb-2 text-sm list-disc pl-5">
+              <li>Извлечение значений из объектов и массивов в переменные.</li>
+            </ul>
+            <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>const user = { name: "Alex", age: 25 };
+const { name, age } = user;
+
+const arr = [1, 2, 3];
+const [a, b] = arr;
+</code></pre>
+          </div>
+          <div id="default-params" class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">Параметры по умолчанию</h3>
+            <ul class="text-gray-700 mb-2 text-sm list-disc pl-5">
+              <li>Можно задавать значения по умолчанию для параметров функции.</li>
+            </ul>
+            <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>function greet(name = "Гость") {
+  return `Привет, ${name}!`;
+}
+</code></pre>
+          </div>
+          <div id="spread-rest" class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">Spread / Rest оператор</h3>
+            <ul class="text-gray-700 mb-2 text-sm list-disc pl-5">
+              <li>Spread <code>...</code> — разворачивает массивы/объекты.</li>
+              <li>Rest <code>...</code> — собирает оставшиеся значения.</li>
+            </ul>
+            <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>const arr1 = [1, 2];
+const arr2 = [...arr1, 3, 4]; // [1,2,3,4]
+
+function sum(...nums) {
+  return nums.reduce((a, b) =&gt; a + b, 0);
+}
+</code></pre>
+          </div>
+          <div id="modules" class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">ES Модули (import / export)</h3>
+            <ul class="text-gray-700 mb-2 text-sm list-disc pl-5">
+              <li>Современная организация кода.</li>
+              <li>Модули изолируют переменные и функции.</li>
+            </ul>
+            <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>// module.js
+export function sum(a, b) { return a + b; }
+
+// main.js
+import { sum } from "./module.js";
+</code></pre>
+          </div>
+          <div id="promises" class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">Промисы</h3>
+            <ul class="text-gray-700 mb-2 text-sm list-disc pl-5">
+              <li>Позволяют работать с асинхронным кодом.</li>
+              <li>Методы <code>.then()</code> и <code>.catch()</code> для обработки результата и ошибок.</li>
+            </ul>
+            <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>const promise = new Promise((resolve, reject) =&gt; {
+  setTimeout(() =&gt; resolve("Готово!"), 1000);
+});
+
+promise.then(result =&gt; console.log(result));
+</code></pre>
+          </div>
+          <div id="async-await" class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">async / await</h3>
+            <ul class="text-gray-700 mb-2 text-sm list-disc pl-5">
+              <li>Позволяет писать асинхронный код, похожий на синхронный.</li>
+              <li>Упрощает обработку ошибок через <code>try/catch</code>.</li>
+            </ul>
+            <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>async function fetchData() {
+  try {
+    const res = await fetch("/api/data");
+    const data = await res.json();
+    console.log(data);
+  } catch (e) {
+    console.error(e);
+  }
+}
+</code></pre>
+          </div>
+          <div id="fetch" class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">fetch API</h3>
+            <ul class="text-gray-700 mb-2 text-sm list-disc pl-5">
+              <li>Современный способ делать HTTP-запросы.</li>
+              <li>Работает на промисах.</li>
+            </ul>
+            <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>fetch("https://api.example.com/data")
+  .then(res =&gt; res.json())
+  .then(data =&gt; console.log(data))
+  .catch(err =&gt; console.error(err));
+</code></pre>
+          </div>
+          <div id="array-methods" class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">Основные методы массивов (Функциональное программирование)</h3>
+            <ul class="text-gray-700 mb-4 text-sm list-disc pl-5">
+              <li><code>.map()</code> — преобразует каждый элемент, возвращает новый массив.</li>
+              <li><code>.filter()</code> — выбирает элементы, которые проходят тест, возвращает новый массив.</li>
+              <li><code>.find()</code> — находит первый элемент, который проходит тест.</li>
+              <li><code>.reduce()</code> — сводит массив к одному значению (например, сумма).</li>
+              <li><code>.some()</code> и <code>.every()</code> — проверяют, удовлетворяют ли некоторые/все элементы условию.</li>
+            </ul>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 class="font-medium text-gray-700 mb-2">map, filter, find:</h4>
+                <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>const arr = [1, 2, 3, 4, 5];
+
+const doubled = arr.map(x => x * 2); // [2, 4, 6, 8, 10]
+const even = arr.filter(x => x % 2 === 0); // [2, 4]
+const firstBig = arr.find(x => x > 3); // 4
+</code></pre>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-700 mb-2">reduce, some, every:</h4>
+                <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>const arr = [1, 2, 3, 4, 5];
+
+const sum = arr.reduce((acc, x) => acc + x, 0); // 15
+const hasEven = arr.some(x => x % 2 === 0); // true
+const allPositive = arr.every(x => x > 0); // true
+</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div id="concepts" class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200 mt-10">
+          <h3 class="text-lg font-semibold text-gray-800 mb-4">Важные концепции и паттерны</h3>
+          <ul class="text-gray-700 mb-6 text-sm list-disc pl-5">
+            <li><b>Event Loop & Call Stack</b> — как JS обрабатывает асинхронность и задачи.</li>
+            <li><b>this</b> — как определяется значение <code>this</code> в разных контекстах.</li>
+            <li><b>Замыкания (Closures)</b> — функция помнит окружение, в котором была создана.</li>
+            <li><b>Модульный паттерн</b> — инкапсуляция кода, приватные/публичные члены.</li>
+            <li><b>Immutability</b> — работа с неизменяемыми данными, создание новых копий.</li>
+            <li><b>Pure Functions</b> — одинаковый результат для одинаковых входных, без побочных эффектов.</li>
+            <li><b>DRY Principle</b> — не повторяйся, выноси повторяющуюся логику в функции.</li>
+          </ul>
+          <div class="space-y-6">
+            <div>
+              <h4 class="font-medium text-gray-700 mb-2">Event Loop & Call Stack</h4>
+              <p class="text-sm text-gray-700 mb-2">JS выполняет код поочередно (call stack), асинхронные задачи (setTimeout, fetch) ставятся в очередь (event loop) и выполняются после основного кода.</p>
+              <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>console.log('A');
+setTimeout(() => console.log('B'), 0);
+console.log('C'); // Выведет: A, C, B</code></pre>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-700 mb-2">this Keyword</h4>
+              <p class="text-sm text-gray-700 mb-2">Значение <code>this</code> зависит от контекста вызова: глобальный объект, объект, класс, стрелочная функция (наследует this).</p>
+              <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>const obj = {
+  name: 'Alex',
+  show() { console.log(this.name); }
+};
+obj.show(); // Alex
+
+const show = obj.show;
+show(); // undefined (или window.name)</code></pre>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-700 mb-2">Closures (Замыкания)</h4>
+              <p class="text-sm text-gray-700 mb-2">Функция запоминает переменные из внешней области видимости даже после завершения этой области.</p>
+              <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>function makeCounter() {
+  let count = 0;
+  return function() {
+    count++;
+    return count;
+  };
+}
+const counter = makeCounter();
+counter(); // 1
+counter(); // 2</code></pre>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-700 mb-2">Модульный паттерн</h4>
+              <p class="text-sm text-gray-700 mb-2">Инкапсуляция приватных данных и методов, экспорт только нужного.</p>
+              <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>const Counter = (() => {
+  let count = 0;
+  return {
+    inc: () => ++count,
+    get: () => count
+  };
+})();
+Counter.inc();
+Counter.get();</code></pre>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-700 mb-2">Immutability</h4>
+              <p class="text-sm text-gray-700 mb-2">Не изменяйте исходные данные — создавайте новые копии.</p>
+              <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>const arr = [1,2,3];
+const newArr = [...arr, 4]; // [1,2,3,4]
+
+const obj = {a:1};
+const newObj = { ...obj, b:2 };
+</code></pre>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-700 mb-2">Pure Functions</h4>
+              <p class="text-sm text-gray-700 mb-2">Чистая функция не изменяет внешние переменные и всегда возвращает одинаковый результат для одинаковых входных.</p>
+              <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>// Чистая функция
+function add(a, b) {
+  return a + b;
+}
+// Не чистая:
+let c = 0;
+function addToC(a) { c += a; }</code></pre>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-700 mb-2">DRY Principle</h4>
+              <p class="text-sm text-gray-700 mb-2">Выносите повторяющийся код в функции или модули.</p>
+              <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>// Плохо:
+console.log('Hello');
+console.log('Hello');
+// Хорошо:
+function greet() { console.log('Hello'); }
+greet();
+greet();</code></pre>
+            </div>
+          </div>
+        </div>
+        <div id="dom" class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200 mt-10">
+          <h3 class="text-lg font-semibold text-gray-800 mb-4">DOM-манипуляции (выше базового)</h3>
+          <ul class="text-gray-700 mb-6 text-sm list-disc pl-5">
+            <li><b>Event Delegation</b> — обработка событий на родителе через всплытие (эффективно для динамических списков).</li>
+            <li><b>data-* атрибуты</b> — хранение пользовательских данных прямо в HTML.</li>
+            <li><b>document.createElement() & .append()</b> — современный способ создавать и добавлять элементы.</li>
+          </ul>
+          <div class="space-y-6">
+            <div>
+              <h4 class="font-medium text-gray-700 mb-2">Event Delegation</h4>
+              <p class="text-sm text-gray-700 mb-2">Вместо навешивания обработчика на каждый элемент, используйте один на родителе:</p>
+              <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>document.querySelector('ul').addEventListener('click', e => {
+  if (e.target.matches('li')) {
+    alert('Клик по элементу: ' + e.target.textContent);
+  }
+});</code></pre>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-700 mb-2">data-* атрибуты</h4>
+              <p class="text-sm text-gray-700 mb-2">Можно хранить данные прямо в HTML и получать их через dataset:</p>
+              <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>&lt;button data-user-id="42"&gt;Профиль&lt;/button&gt;
+
+const btn = document.querySelector('button');
+console.log(btn.dataset.userId); // "42"</code></pre>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-700 mb-2">document.createElement() & .append()</h4>
+              <p class="text-sm text-gray-700 mb-2">Современный способ создавать и добавлять элементы:</p>
+              <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>const div = document.createElement('div');
+div.textContent = 'Привет!';
+document.body.append(div);
+</code></pre>
+            </div>
+          </div>
+        </div>
+        <div id="error-handling" class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200 mt-10">
+          <h3 class="text-lg font-semibold text-gray-800 mb-4">Обработка ошибок и отладка</h3>
+          <ul class="text-gray-700 mb-6 text-sm list-disc pl-5">
+            <li><b>try...catch</b> — позволяет перехватывать и обрабатывать ошибки во время выполнения, не давая приложению "упасть".</li>
+          </ul>
+          <div>
+            <h4 class="font-medium text-gray-700 mb-2">try...catch</h4>
+            <p class="text-sm text-gray-700 mb-2">Используйте для безопасного выполнения кода, который может выбросить ошибку:</p>
+            <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>try {
+  JSON.parse('{ invalid json }');
+} catch (e) {
+  console.error('Ошибка парсинга:', e.message);
+}
+</code></pre>
+          </div>
+        </div>
+    </main>
+    <footer class="bg-white/80 backdrop-blur-sm border-t border-gray-200 mt-12">
+      <div class="max-w-5xl mx-auto px-6 py-6">
+        <div class="text-center">
+          <p class="text-gray-600 mb-3">
+            ⚡ JavaScript развивается — следите за новыми возможностями!
+          </p>
+          <div class="flex justify-center space-x-6 text-sm text-gray-500">
+            <span>📚 Изучено: 10+ тем</span>
+            <span>•</span>
+            <span>⏱️ Время чтения: ~8 минут</span>
+            <span>•</span>
+            <span>🔗 <a href="./index.html" class="text-blue-600 hover:text-blue-800">На главную</a></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
