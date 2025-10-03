@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>HTML 2025 — Современные возможности</title>
+    <style>
+      /* Исправление для блоков кода, чтобы они не выходили за пределы в мобильной версии */
+      pre {
+        max-width: 100%;
+        white-space: pre-wrap;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+      }
+      @media (min-width: 768px) {
+        /* На десктопах возвращаем стандартный режим прокрутки */
+        pre {
+          white-space: pre;
+          word-break: normal;
+          overflow-wrap: normal;
+        }
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-gradient-to-br from-orange-50 via-white to-yellow-50">
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-10">
+      <div class="max-w-5xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <a href="./index.html" class="mr-4 text-gray-600 hover:text-gray-800 transition-colors">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+              </svg>
+            </a>
+            <h1 class="text-3xl font-bold bg-gradient-to-r from-orange-600 to-yellow-600 bg-clip-text text-transparent">
+              🏷️ HTML 2025 — Современные возможности
+            </h1>
+          </div>
+          <div class="hidden md:flex items-center space-x-4">
+            <span class="text-sm text-gray-500">Обновлено: 22.09.2025</span>
+            <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto px-6 py-8">
+      <!-- Table of Contents -->
+      <nav class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200 mb-8">
+        <h2 class="text-xl font-semibold text-gray-800 mb-4">📋 Содержание</h2>
+        <ul class="grid md:grid-cols-2 gap-2 text-sm">
+          <li><a href="#new-tags" class="text-orange-600 hover:text-orange-800">Новые и важные теги</a></li>
+          <li><a href="#seo" class="text-orange-600 hover:text-orange-800">SEO-разметка</a></li>
+          <li><a href="#code-tag" class="text-orange-600 hover:text-orange-800">Тег &lt;code&gt; и оформление кода</a></li>
+        </ul>
+      </nav>
+
+      <!-- Новые теги -->
+      <section id="new-tags" class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+          <span class="w-1 h-8 bg-gradient-to-b from-orange-500 to-yellow-500 rounded-full mr-3"></span>
+          Новые и важные теги HTML
+        </h2>
+        <div class="space-y-6">
+          <div class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200">
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">Современные семантические теги</h3>
+            <ul class="list-disc pl-6 text-gray-700 space-y-1">
+              <li><b>&lt;header&gt;</b>, <b>&lt;nav&gt;</b>, <b>&lt;main&gt;</b>, <b>&lt;footer&gt;</b> — структурируют страницу и улучшают SEO.</li>
+              <li><b>&lt;section&gt;</b>, <b>&lt;article&gt;</b>, <b>&lt;aside&gt;</b> — для смысловых блоков и независимых частей.</li>
+              <li><b>&lt;figure&gt;</b> и <b>&lt;figcaption&gt;</b> — для изображений с подписями.</li>
+              <li><b>&lt;mark&gt;</b> — выделение текста.</li>
+              <li><b>&lt;time&gt;</b> — для дат и времени (можно использовать атрибут datetime).</li>
+              <li><b>&lt;dialog&gt;</b> — модальные окна без JS.</li>
+              <li><b>&lt;details&gt;</b> и <b>&lt;summary&gt;</b> — раскрывающиеся блоки (аккордеоны).</li>
+              <li><b>&lt;template&gt;</b> — заготовки для динамического контента.</li>
+              <li><b>&lt;output&gt;</b> — вывод результата вычислений.</li>
+              <li><b>&lt;progress&gt;</b> и <b>&lt;meter&gt;</b> — индикаторы прогресса и измерения.</li>
+              <li><b>&lt;search&gt;</b> — новый тег для областей поиска (альтернатива role="search").</li>
+              <li><b>&lt;dialog popover&gt;</b> и <b>popover</b> — всплывающие окна без JS.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEO-разметка -->
+      <section id="seo" class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+          <span class="w-1 h-8 bg-gradient-to-b from-green-500 to-lime-500 rounded-full mr-3"></span>
+          SEO-разметка и лучшие практики
+        </h2>
+        <div class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200">
+          <h3 class="text-xl font-semibold text-gray-800 mb-3">Ключевые моменты для SEO:</h3>
+          <ul class="list-disc pl-6 text-gray-700 space-y-1">
+            <li>Используйте <b>&lt;title&gt;</b> и <b>&lt;meta name="description"&gt;</b> для каждой страницы.</li>
+            <li>Структурируйте контент с помощью <b>&lt;h1&gt;-&lt;h6&gt;</b> (только один <b>&lt;h1&gt;</b> на страницу).</li>
+            <li>Используйте семантические теги: <b>&lt;main&gt;</b>, <b>&lt;nav&gt;</b>, <b>&lt;article&gt;</b>, <b>&lt;section&gt;</b>, <b>&lt;aside&gt;</b>, <b>&lt;footer&gt;</b>.</li>
+            <li>Добавляйте <b>alt</b> к изображениям: <b>&lt;img src="..." alt="Описание"&gt;</b>.</li>
+            <li>Используйте <b>&lt;a href="..."&gt;</b> с осмысленным текстом (анкором).</li>
+            <li>Добавляйте <b>aria-*</b> и <b>role</b> для доступности.</li>
+            <li>Для разметки организаций, событий, товаров используйте <b>schema.org</b> (JSON-LD или microdata).</li>
+            <li>Используйте <b>&lt;link rel="canonical" href="..."&gt;</b> для борьбы с дублями.</li>
+            <li>Проверяйте разметку через <a href="https://search.google.com/test/rich-results" class="text-blue-600 underline" target="_blank">Google Rich Results Test</a>.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Тег code и оформление кода -->
+      <section id="code-tag" class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+          <span class="w-1 h-8 bg-gradient-to-b from-blue-500 to-cyan-500 rounded-full mr-3"></span>
+          Тег &lt;code&gt; и оформление кода
+        </h2>
+        <div class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200">
+          <h3 class="text-xl font-semibold text-gray-800 mb-3">Использование &lt;code&gt; и &lt;pre&gt;:</h3>
+          <ul class="list-disc pl-6 text-gray-700 space-y-1 mb-4">
+            <li><b>&lt;code&gt;</b> — для выделения фрагментов кода внутри текста.</li>
+            <li><b>&lt;pre&gt;</b> — для форматирования многострочного кода с сохранением пробелов.</li>
+            <li>Для блоков кода используйте <b>&lt;pre&gt;&lt;code&gt;...&lt;/code&gt;&lt;/pre&gt;</b>.</li>
+            <li>Добавляйте <b>class="language-..."</b> для подсветки синтаксиса (например, Prism.js, Highlight.js).</li>
+          </ul>
+          <div class="mb-4">
+            <h4 class="font-medium text-gray-700 mb-2">Пример:</h4>
+            <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg text-sm overflow-x-auto"><code>&lt;pre&gt;
+  &lt;code class="language-js"&gt;
+    const hello = 'Привет, мир!';
+    console.log(hello);
+  &lt;/code&gt;
+&lt;/pre&gt;
+</code></pre>
+          </div>
+          <div class="mb-4">
+            <h4 class="font-medium text-gray-700 mb-2">Встраивание кода в текст:</h4>
+            <p class="text-gray-700">Чтобы вывести <code class="bg-gray-200 px-1 rounded">console.log()</code> в тексте, используйте тег <b>&lt;code&gt;</b>.</p>
+          </div>
+          <div>
+            <h4 class="font-medium text-gray-700 mb-2">Оформление кода:</h4>
+            <ul class="list-disc pl-6 text-gray-700 space-y-1">
+              <li>Используйте моноширинный шрифт (например, <b>font-mono</b> в Tailwind).</li>
+              <li>Добавляйте фон и скругления для выделения.</li>
+              <li>Для больших блоков — прокрутка по горизонтали (<b>overflow-x-auto</b>).</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- HTML 2025: Новейшие возможности -->
+      <section id="html-2025" class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+          <span class="w-1 h-8 bg-gradient-to-b from-pink-500 to-purple-500 rounded-full mr-3"></span>
+          HTML 2025: Новейшие возможности
+        </h2>
+        
+        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg mb-6">
+          <div class="flex">
+            <div class="flex-shrink-0">
+              <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div class="ml-3">
+              <p class="text-sm text-yellow-700">
+                Материал этого раздела основан на статье <a href="https://frontendmasters.com/blog/bone-up-html-2025/" class="font-medium text-yellow-800 underline hover:text-yellow-900" target="_blank" rel="noopener">Frontend Masters: Bone Up HTML 2025</a>.
+                Полный список новых возможностей и более подробную информацию вы можете найти в оригинальной статье.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="space-y-8">
+          <!-- details + name -->
+          <div class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">Групповые details (аккордеон)</h3>
+            <p class="text-gray-700 mb-2">Можно объединять <code>&lt;details name="group"&gt;</code> для поведения аккордеона (только один открыт).</p>
+            <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>&lt;details name="faq"&gt;
+  &lt;summary&gt;Вопрос 1&lt;/summary&gt;
+  Ответ 1
+&lt;/details&gt;
+&lt;details name="faq"&gt;
+  &lt;summary&gt;Вопрос 2&lt;/summary&gt;
+  Ответ 2
+&lt;/details&gt;</code></pre>
+          </div>
+          <!-- ::details-content -->
+          <div class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">::details-content</h3>
+            <p class="text-gray-700 mb-2">CSS-псевдоэлемент для стилизации содержимого <code>&lt;details&gt;</code> (например, анимация раскрытия).</p>
+            <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>details::details-content {
+  transition: opacity 0.3s;
+  opacity: 1;
+}
+details[open]::details-content {
+  opacity: 1;
+}</code></pre>
+          </div>
+          <!-- Стилизуемые select -->
+          <div class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">Стилизуемые select</h3>
+            <p class="text-gray-700 mb-2">С помощью <code>appearance: base-select;</code> можно полностью стилизовать <code>&lt;select&gt;</code> и <code>&lt;option&gt;</code>.</p>
+            <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>select, ::picker(select) {
+  appearance: base-select;
+}</code></pre>
+          </div>
+          <!-- <hr> в select -->
+          <div class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">&lt;hr&gt; в select</h3>
+            <p class="text-gray-700 mb-2">Можно вставлять <code>&lt;hr&gt;</code> прямо в выпадающий список для визуального разделения.</p>
+            <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>&lt;select&gt;
+  &lt;option&gt;Яблоко&lt;/option&gt;
+  &lt;option&gt;Банан&lt;/option&gt;
+  &lt;hr&gt;
+  &lt;option&gt;Груша&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+          </div>
+          <!-- popover -->
+          <div class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">popover и popovertarget</h3>
+            <p class="text-gray-700 mb-2">Всплывающие окна без JS. Управление через атрибуты <code>popover</code> и <code>popovertarget</code>.</p>
+            <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>&lt;button popovertarget="my-pop"&gt;Открыть&lt;/button&gt;
+&lt;div popover id="my-pop"&gt;Контент поповера&lt;/div&gt;</code></pre>
+          </div>
+          <!-- input type="checkbox" switch -->
+          <div class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">input type="checkbox" switch</h3>
+            <p class="text-gray-700 mb-2">Нативный переключатель (тумблер):</p>
+            <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>&lt;input type="checkbox" switch&gt;</code></pre>
+          </div>
+          <!-- <search> -->
+          <div class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">&lt;search&gt;</h3>
+            <p class="text-gray-700 mb-2">Семантический контейнер для поиска (альтернатива <code>role="search"</code>).</p>
+            <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>&lt;search&gt;
+  &lt;input type="search" placeholder="Поиск..."&gt;
+&lt;/search&gt;</code></pre>
+          </div>
+          <!-- inert -->
+          <div class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">Атрибут inert</h3>
+            <p class="text-gray-700 mb-2">Делает элемент и всё его содержимое неактивным для взаимодействия и доступности.</p>
+            <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>&lt;div inert&gt;Этот блок неактивен&lt;/div&gt;</code></pre>
+          </div>
+          <!-- hidden="until-found" -->
+          <div class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">hidden="until-found"</h3>
+            <p class="text-gray-700 mb-2">Скрывает элемент, но позволяет находить его через поиск по странице. Показывается при совпадении.</p>
+            <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>&lt;div hidden="until-found"&gt;Этот текст появится, если его найти через Ctrl+F&lt;/div&gt;</code></pre>
+          </div>
+          <!-- Declarative Shadow DOM -->
+          <div class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">Declarative Shadow DOM</h3>
+            <p class="text-gray-700 mb-2">Позволяет создавать Shadow DOM без JS, прямо в HTML.</p>
+            <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>&lt;template shadowrootmode="open"&gt;
+  &lt;style&gt;h2 { color: purple; }&lt;/style&gt;
+  &lt;h2&gt;В тени!&lt;/h2&gt;
+&lt;/template&gt;</code></pre>
+          </div>
+          <!-- Import Maps -->
+          <div class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">Import Maps</h3>
+            <p class="text-gray-700 mb-2">Позволяет указывать пути для импортов модулей прямо в HTML.</p>
+            <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>&lt;script type="importmap"&gt;{
+  "imports": {
+    "react": "https://esm.sh/react@18"
+  }
+}&lt;/script&gt;</code></pre>
+          </div>
+          <!-- Multi-Page View Transitions -->
+          <div class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">Multi-Page View Transitions</h3>
+            <p class="text-gray-700 mb-2">Плавные переходы между страницами с помощью <code>@view-transition</code> и <code>view-transition-name</code>.</p>
+            <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>@view-transition {
+  navigation: auto;
+}
+
+&lt;h3 style="view-transition-name: post-title-1;"&gt;Заголовок&lt;/h3&gt;</code></pre>
+          </div>
+          <!-- Responsive Video -->
+          <div class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">Адаптивное видео</h3>
+            <p class="text-gray-700 mb-2">Используйте <code>&lt;source media&gt;</code> внутри <code>&lt;video&gt;</code> для разных условий.</p>
+            <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>&lt;video controls&gt;
+  &lt;source media="(orientation: landscape)" src="video-landscape.mp4"&gt;
+  &lt;source src="video-portrait.mp4"&gt;
+&lt;/video&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white/80 backdrop-blur-sm border-t border-gray-200 mt-12">
+      <div class="max-w-5xl mx-auto px-6 py-6">
+        <div class="text-center">
+          <p class="text-gray-600 mb-3">
+            🏷️ HTML развивается — следите за новыми тегами и возможностями!
+          </p>
+          <div class="flex flex-wrap justify-center gap-2 text-sm text-gray-500">
+            <span>📚 Изучено: 15+ HTML тегов</span>
+            <span class="hidden sm:inline">•</span>
+            <span>⏱️ Время чтения: ~10 минут</span>
+            <span class="hidden sm:inline">•</span>
+            <span>🔗 <a href="./index.html" class="text-orange-600 hover:text-orange-800">На главную</a></span>
+          </div>
+          <div class="mt-4 text-sm">
+            <a href="https://frontendmasters.com/blog/bone-up-html-2025/" target="_blank" rel="noopener" class="inline-flex items-center px-4 py-2 border border-orange-300 rounded-lg text-orange-700 bg-orange-50 hover:bg-orange-100 transition-colors">
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+              </svg>
+              Источник: Frontend Masters - Bone Up HTML 2025
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
